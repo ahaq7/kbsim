@@ -54,7 +54,7 @@ function TypingTest({ currentTheme, theme }) {
         ref={word.focused ? useRef() : null}
       />
     )
-  });
+  })
 
 
   // subscribe to inputVal - execute this if inputVal changes

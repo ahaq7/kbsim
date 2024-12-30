@@ -11,6 +11,7 @@ import {
   selectPressedKeys,
   selectKeyboardStyle,
 } from './keySimulatorSlice';
+import { Terminal } from './../terminal/Terminal.js';
 import { keySounds } from './../audioModules/audioModule.js';
 import { keynames } from './../keyModules/keycodeMaps.js';
 import { keyPresets } from './../keyModules/keyPresets.js'
@@ -229,16 +230,7 @@ function KeySimulator({ currentTheme, theme }) {
 
 
   return (
-    <div 
-      className={styles.keywrapper}
-      onKeyDown={handleKeyDown}
-      onKeyUp={handleKeyUp}
-      ref={keycontainer}
-      tabIndex="0"
-      style={{
-        backgroundColor: theme.background
-      }}
-    >
+    <div>
       <div className={styles.keycontainer}>
         <Suspense fallback={
           <div 
@@ -246,10 +238,12 @@ function KeySimulator({ currentTheme, theme }) {
             style={{
               borderColor: theme.boxBorder
             }}
-          />
+          >
+            Loading...
+          </div>
         }>
           <TypingTest />
-        </Suspense>
+        </Suspense> 
         <div 
           className={styles.selectcontainer}
           style={{

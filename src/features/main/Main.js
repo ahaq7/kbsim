@@ -6,7 +6,6 @@ import ThemeProvider from './../themeProvider/ThemeProvider';
 
 const Main = () => (
   <ThemeProvider>
-    <Header/>
     <KeySimulator/>
     <Footer/>
   </ThemeProvider>
